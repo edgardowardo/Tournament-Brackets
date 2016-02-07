@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		772985F41C67866800E83582 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 772985F31C67866800E83582 /* Cartfile */; };
+		77B11F191C6788720013D281 /* MagicalRecord.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77B11F181C6788720013D281 /* MagicalRecord.framework */; };
 		77E1F55E1C67859200F3C812 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E1F55D1C67859200F3C812 /* AppDelegate.swift */; };
 		77E1F5601C67859200F3C812 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E1F55F1C67859200F3C812 /* ViewController.swift */; };
 		77E1F5631C67859200F3C812 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77E1F5611C67859200F3C812 /* Main.storyboard */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		772985F31C67866800E83582 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		77B11F181C6788720013D281 /* MagicalRecord.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MagicalRecord.framework; path = Carthage/Build/iOS/MagicalRecord.framework; sourceTree = "<group>"; };
 		77E1F55A1C67859200F3C812 /* TournamentBrackets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TournamentBrackets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77E1F55D1C67859200F3C812 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77E1F55F1C67859200F3C812 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,15 +33,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77B11F191C6788720013D281 /* MagicalRecord.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		77B11F1B1C678CE70013D281 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				772985F31C67866800E83582 /* Cartfile */,
+				77B11F181C6788720013D281 /* MagicalRecord.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		77E1F5511C67859200F3C812 = {
 			isa = PBXGroup;
 			children = (
+				77B11F1B1C678CE70013D281 /* Frameworks */,
 				77E1F55C1C67859200F3C812 /* TournamentBrackets */,
 				77E1F55B1C67859200F3C812 /* Products */,
 			);
@@ -74,6 +89,7 @@
 				77E1F5561C67859200F3C812 /* Sources */,
 				77E1F5571C67859200F3C812 /* Frameworks */,
 				77E1F5581C67859200F3C812 /* Resources */,
+				77B11F1A1C6788D50013D281 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -124,11 +140,29 @@
 			files = (
 				77E1F5681C67859200F3C812 /* LaunchScreen.storyboard in Resources */,
 				77E1F5651C67859200F3C812 /* Assets.xcassets in Resources */,
+				772985F41C67866800E83582 /* Cartfile in Resources */,
 				77E1F5631C67859200F3C812 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		77B11F1A1C6788D50013D281 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/MagicalRecord.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		77E1F5561C67859200F3C812 /* Sources */ = {
@@ -247,6 +281,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TournamentBrackets/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.edgardoagno.TournamentBrackets;
@@ -258,6 +296,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TournamentBrackets/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.edgardoagno.TournamentBrackets;
@@ -284,6 +326,7 @@
 				77E1F56E1C67859200F3C812 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
