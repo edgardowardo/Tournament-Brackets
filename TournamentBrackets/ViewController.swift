@@ -13,6 +13,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        TournamentEntity.findAll()
+
+        //        TournamentEntity.MR_findAll()
+//        let tourneys = TournamentEntity.fi
     }
 
     override func didReceiveMemoryWarning() {

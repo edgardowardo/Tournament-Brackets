@@ -14,6 +14,9 @@
 		77E1F5631C67859200F3C812 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77E1F5611C67859200F3C812 /* Main.storyboard */; };
 		77E1F5651C67859200F3C812 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77E1F5641C67859200F3C812 /* Assets.xcassets */; };
 		77E1F5681C67859200F3C812 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77E1F5661C67859200F3C812 /* LaunchScreen.storyboard */; };
+		77F422E81C679FF300F86A87 /* TournamentBrackets.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 77F422E61C679FF300F86A87 /* TournamentBrackets.xcdatamodeld */; };
+		77F422EB1C67A25300F86A87 /* TournamentEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F422E91C67A25300F86A87 /* TournamentEntity+CoreDataProperties.swift */; };
+		77F422EC1C67A25300F86A87 /* TournamentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F422EA1C67A25300F86A87 /* TournamentEntity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,10 @@
 		77E1F5641C67859200F3C812 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		77E1F5671C67859200F3C812 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		77E1F5691C67859200F3C812 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77F422E71C679FF300F86A87 /* TournamentBrackets.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TournamentBrackets.xcdatamodel; sourceTree = "<group>"; };
+		77F422E91C67A25300F86A87 /* TournamentEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TournamentEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		77F422EA1C67A25300F86A87 /* TournamentEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TournamentEntity.swift; sourceTree = "<group>"; };
+		77F422EE1C67A7FA00F86A87 /* TournamentBrackets-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TournamentBrackets-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +52,7 @@
 			children = (
 				772985F31C67866800E83582 /* Cartfile */,
 				77B11F181C6788720013D281 /* MagicalRecord.framework */,
+				77F422EE1C67A7FA00F86A87 /* TournamentBrackets-Bridging-Header.h */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -52,6 +60,7 @@
 		77E1F5511C67859200F3C812 = {
 			isa = PBXGroup;
 			children = (
+				77F422ED1C67A2E500F86A87 /* Entities */,
 				77B11F1B1C678CE70013D281 /* Frameworks */,
 				77E1F55C1C67859200F3C812 /* TournamentBrackets */,
 				77E1F55B1C67859200F3C812 /* Products */,
@@ -75,8 +84,18 @@
 				77E1F5641C67859200F3C812 /* Assets.xcassets */,
 				77E1F5661C67859200F3C812 /* LaunchScreen.storyboard */,
 				77E1F5691C67859200F3C812 /* Info.plist */,
+				77F422E61C679FF300F86A87 /* TournamentBrackets.xcdatamodeld */,
 			);
 			path = TournamentBrackets;
+			sourceTree = "<group>";
+		};
+		77F422ED1C67A2E500F86A87 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				77F422E91C67A25300F86A87 /* TournamentEntity+CoreDataProperties.swift */,
+				77F422EA1C67A25300F86A87 /* TournamentEntity.swift */,
+			);
+			name = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,7 +188,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77F422E81C679FF300F86A87 /* TournamentBrackets.xcdatamodeld in Sources */,
+				77F422EB1C67A25300F86A87 /* TournamentEntity+CoreDataProperties.swift in Sources */,
 				77E1F5601C67859200F3C812 /* ViewController.swift in Sources */,
+				77F422EC1C67A25300F86A87 /* TournamentEntity.swift in Sources */,
 				77E1F55E1C67859200F3C812 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,6 +303,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -289,6 +312,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.edgardoagno.TournamentBrackets;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TournamentBrackets-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -296,6 +321,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -304,6 +330,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.edgardoagno.TournamentBrackets;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TournamentBrackets-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -329,6 +356,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		77F422E61C679FF300F86A87 /* TournamentBrackets.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				77F422E71C679FF300F86A87 /* TournamentBrackets.xcdatamodel */,
+			);
+			currentVersion = 77F422E71C679FF300F86A87 /* TournamentBrackets.xcdatamodel */;
+			path = TournamentBrackets.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 77E1F5521C67859200F3C812 /* Project object */;
 }
