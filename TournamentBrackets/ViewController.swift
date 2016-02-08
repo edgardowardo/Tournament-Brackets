@@ -10,21 +10,22 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var tourneyEntities : [TournamentEntity]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        TournamentEntity.findAll()
-
-        //        TournamentEntity.MR_findAll()
-//        let tourneys = TournamentEntity.fi
+        tourneyEntities = TournamentEntity.MR_findAll() as? [TournamentEntity]
+        
+        for t in tourneyEntities {
+            print("\(t.name!)")
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
 

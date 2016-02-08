@@ -1,5 +1,5 @@
 //
-//  TournamentEntity+CoreDataProperties.swift
+//  GroupEntity+CoreDataProperties.swift
 //  TournamentBrackets
 //
 //  Created by EDGARDO AGNO on 08/02/2016.
@@ -12,9 +12,14 @@
 import Foundation
 import CoreData
 
-extension TournamentEntity {
+extension GroupEntity {
 
+    @NSManaged var isHandicap: Bool
     @NSManaged var name: String?
-    @NSManaged var groupsRelation: NSSet?
+    @NSManaged var scheduleType: Int16
+    @NSManaged var teamCount: Int16
+    @NSManaged var gamesRelation: NSSet?
+    @NSManaged var teamsRelation: NSSet?
+    @NSManaged var tournamentRelation: TournamentEntity?
 
 }
