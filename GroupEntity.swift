@@ -12,7 +12,31 @@ import CoreData
 class GroupEntity: NSManagedObject {
 
 // Insert code here to add functionality to your managed object subclass
+    
+    var teamCount: Int16? {
+        set {
+            self.willChangeValueForKey("teamCount")
+            self.setPrimitiveValue(NSNumber(short: newValue!), forKey: "teamCount")
+            self.didChangeValueForKey("teamCount")
+            
+            // auto create team relationship when count is set
+            for var i : Int16 = 0; i < newValue!; i++ {
+                self.addTeam(TeamEntity.create("Team \(i + 1)"))
+            }
+        }
+        get {
+            self.willAccessValueForKey("teamCount")
+            let n = self.primitiveValueForKey("teamCount") as! NSNumber
+            self.didAccessValueForKey("teamCount")
+            return Int16(n.integerValue)
+        }
+    }
 
+    func addTeam(team:TeamEntity) {
+        let teams = self.mutableSetValueForKey("teamsRelation")
+        teams.addObject(team)
+    }
+    
     class func create(name : String? = nil) -> GroupEntity {
         let t = GroupEntity.MR_createEntity()! as GroupEntity
         if let n = name {
@@ -20,7 +44,6 @@ class GroupEntity: NSManagedObject {
         } else {
             t.name = "Group \(GroupEntity.MR_countOfEntities() + 1)"
         }
-        NSManagedObjectContext.MR_defaultContext().MR_saveToPersistentStoreAndWait()
         return t
     }
     

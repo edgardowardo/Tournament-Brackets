@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 class TournamentEntity: NSManagedObject {
-
+    
 // Insert code here to add functionality to your managed object subclass
 
     class func create(name : String? = nil) -> TournamentEntity {
@@ -20,7 +20,16 @@ class TournamentEntity: NSManagedObject {
         } else {
             t.name = "Tournament \(TournamentEntity.MR_countOfEntities() + 1)"
         }
-        NSManagedObjectContext.MR_defaultContext().MR_saveToPersistentStoreAndWait()
+        let g = GroupEntity.create("Group 1")
+        g.teamCount = 4
+        t.addGroup(g)
         return t
     }
+    
+    func addGroup(group:GroupEntity) {
+        let groups = self.mutableSetValueForKey("groupsRelation")
+        groups.addObject(group)
+    }
+    
+    
 }

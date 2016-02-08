@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7718C9F41C68DEA000CE5F89 /* CoreDataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7718C9F31C68DEA000CE5F89 /* CoreDataExtensions.swift */; };
 		772985F41C67866800E83582 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 772985F31C67866800E83582 /* Cartfile */; };
 		77B11F191C6788720013D281 /* MagicalRecord.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77B11F181C6788720013D281 /* MagicalRecord.framework */; };
 		77E1F55E1C67859200F3C812 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E1F55D1C67859200F3C812 /* AppDelegate.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7718C9F31C68DEA000CE5F89 /* CoreDataExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataExtensions.swift; sourceTree = "<group>"; };
 		772985F31C67866800E83582 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		77B11F181C6788720013D281 /* MagicalRecord.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MagicalRecord.framework; path = Carthage/Build/iOS/MagicalRecord.framework; sourceTree = "<group>"; };
 		77E1F55A1C67859200F3C812 /* TournamentBrackets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TournamentBrackets.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,6 +64,7 @@
 		77ABFCF11C67C267000D3B8F /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				7718C9F31C68DEA000CE5F89 /* CoreDataExtensions.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 			files = (
 				77F422E81C679FF300F86A87 /* TournamentBrackets.xcdatamodeld in Sources */,
 				77EDB8801C6805E800334D7E /* TeamEntity+CoreDataProperties.swift in Sources */,
+				7718C9F41C68DEA000CE5F89 /* CoreDataExtensions.swift in Sources */,
 				77EDB8811C6805E800334D7E /* TeamEntity.swift in Sources */,
 				77EDB8841C6805E800334D7E /* GameEntity.swift in Sources */,
 				77F422EB1C67A25300F86A87 /* TournamentEntity+CoreDataProperties.swift in Sources */,

@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     
     @IBAction func truncate(sender: AnyObject) {
         TournamentEntity.MR_truncateAll()
-        NSManagedObjectContext.MR_defaultContext().MR_saveToPersistentStoreAndWait()
+        TournamentEntity.commit()
         printTourneys()
     }
     
@@ -25,7 +25,10 @@ class ViewController: UIViewController {
         tourneyEntities = TournamentEntity.MR_findAll() as? [TournamentEntity]
         for t in tourneyEntities {
             t.name! += ",\(tourneyEntities.count)"
-            print("\(t.name!)")
+            let g = t.groupsRelation!.allObjects.first as! GroupEntity
+            let teams = g.teamsRelation!.allObjects
+            let teamsRelationCount = teams.count
+            print("\(t.name!) groupCount(\(t.groupsRelation!.count)) groupName(\(g.name!)) teamCount(\(g.teamCount)) teamsRelationCount(\(teamsRelationCount))")
         }
     }
     
@@ -35,6 +38,7 @@ class ViewController: UIViewController {
         
         printTourneys()
         TournamentEntity.create()
+        TournamentEntity.commit()
     }
 
     override func didReceiveMemoryWarning() {
