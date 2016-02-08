@@ -17,9 +17,22 @@ extension GroupEntity {
     @NSManaged var isHandicap: Bool
     @NSManaged var name: String?
     @NSManaged var scheduleType: Int16
-    @NSManaged var teamCount: Int16
     @NSManaged var gamesRelation: NSSet?
     @NSManaged var teamsRelation: NSSet?
     @NSManaged var tournamentRelation: TournamentEntity?
 
+    internal var teamCount: Int16?
+        {
+        set {
+            self.willChangeValueForKey("teamCount")
+            self.setPrimitiveValue(NSNumber(short: newValue!), forKey: "teamCount")
+            self.didChangeValueForKey("teamCount")
+        }
+        get {
+            self.willAccessValueForKey("teamCount")
+            let text = self.primitiveValueForKey("teamCount") as? Int16
+            self.didAccessValueForKey("teamCount")
+            return text
+        }
+    }
 }

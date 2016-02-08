@@ -34,12 +34,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         printTourneys()
-        
-        // Insert a record!
-        let t = TournamentEntity.MR_createEntity()! as TournamentEntity
-        t.name = "Tournament \(tourneyEntities.count + 1)"
-        NSManagedObjectContext.MR_defaultContext().MR_saveToPersistentStoreAndWait()
-        
+        TournamentEntity.create()
     }
 
     override func didReceiveMemoryWarning() {

@@ -28,9 +28,9 @@
         <relationship name="groupsRelation" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="GroupEntity" inverseName="tournamentRelation" inverseEntity="GroupEntity" spotlightIndexingEnabled="YES" syncable="YES"/>
     </entity>
     <elements>
-        <element name="GameEntity" positionX="144" positionY="9" width="128" height="133"/>
+        <element name="GameEntity" positionX="162" positionY="-106" width="128" height="133"/>
         <element name="GroupEntity" positionX="-65" positionY="-4" width="128" height="148"/>
-        <element name="TeamEntity" positionX="-65" positionY="216" width="128" height="103"/>
-        <element name="TournamentEntity" positionX="-65" positionY="-162" width="128" height="73"/>
+        <element name="TeamEntity" positionX="160" positionY="54" width="128" height="103"/>
+        <element name="TournamentEntity" positionX="-263" positionY="71" width="128" height="73"/>
     </elements>
 </model>
