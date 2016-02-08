@@ -24,6 +24,7 @@ class ViewController: UIViewController {
         print("tourneysCount==\(TournamentEntity.MR_countOfEntities())")
         tourneyEntities = TournamentEntity.MR_findAll() as? [TournamentEntity]
         for t in tourneyEntities {
+            t.name! += ",\(tourneyEntities.count)"
             print("\(t.name!)")
         }
     }
