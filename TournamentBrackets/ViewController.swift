@@ -7,20 +7,38 @@
 //
 
 import UIKit
+import MagicalRecord
+import CoreData
 
 class ViewController: UIViewController {
 
     var tourneyEntities : [TournamentEntity]!
     
+    @IBAction func truncate(sender: AnyObject) {
+        TournamentEntity.MR_truncateAll()
+        NSManagedObjectContext.MR_defaultContext().MR_saveToPersistentStoreAndWait()
+        printTourneys()
+    }
+    
+    private func printTourneys() {
+        print("tourneysCount==\(TournamentEntity.MR_countOfEntities())")
+        tourneyEntities = TournamentEntity.MR_findAll() as? [TournamentEntity]
+        for t in tourneyEntities {
+            print("\(t.name!)")
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        tourneyEntities = TournamentEntity.MR_findAll() as? [TournamentEntity]
+        printTourneys()
         
-        for t in tourneyEntities {
-            print("\(t.name!)")
-        }
+        // Insert a record!
+        let t = TournamentEntity.MR_createEntity()! as TournamentEntity
+        t.name = "Tournament \(tourneyEntities.count + 1)"
+        NSManagedObjectContext.MR_defaultContext().MR_saveToPersistentStoreAndWait()
+        
     }
 
     override func didReceiveMemoryWarning() {
