@@ -21,7 +21,6 @@ class TournamentEntity: NSManagedObject {
             t.name = "Tournament \(TournamentEntity.MR_countOfEntities() + 1)"
         }
         let g = GroupEntity.create("Group 1")
-        g.teamCount = 4
         t.addGroup(g)
         return t
     }

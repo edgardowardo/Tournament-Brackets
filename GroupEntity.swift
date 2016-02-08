@@ -38,13 +38,27 @@ class GroupEntity: NSManagedObject {
     }
     
     class func create(name : String? = nil) -> GroupEntity {
-        let t = GroupEntity.MR_createEntity()! as GroupEntity
+        let g = GroupEntity.MR_createEntity()! as GroupEntity
         if let n = name {
-            t.name = n
+            g.name = n
         } else {
-            t.name = "Group \(GroupEntity.MR_countOfEntities() + 1)"
+            g.name = "Group \(GroupEntity.MR_countOfEntities() + 1)"
         }
-        return t
+        g.teamCount = 4
+        return g
     }
     
+    // Round Robin Pairs
+    func createGames() {
+        var metaTeamCount = self.teamCount!
+        // Odd number of teams make it even
+        if metaTeamCount % 2 != 0 {
+            metaTeamCount++
+        }
+        
+
+        self.teamsRelation?.allObjects
+        
+        
+    }
 }
