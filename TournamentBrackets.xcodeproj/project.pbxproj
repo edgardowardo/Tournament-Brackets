@@ -21,6 +21,7 @@
 		77EDB8841C6805E800334D7E /* GameEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EDB87D1C6805E800334D7E /* GameEntity.swift */; };
 		77EDB8851C6805E800334D7E /* GroupEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EDB87E1C6805E800334D7E /* GroupEntity+CoreDataProperties.swift */; };
 		77EDB8861C6805E800334D7E /* GroupEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EDB87F1C6805E800334D7E /* GroupEntity.swift */; };
+		77F0877E1C69FABA0018561B /* Incident.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0877D1C69FABA0018561B /* Incident.swift */; };
 		77F422E81C679FF300F86A87 /* TournamentBrackets.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 77F422E61C679FF300F86A87 /* TournamentBrackets.xcdatamodeld */; };
 		77F422EB1C67A25300F86A87 /* TournamentEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F422E91C67A25300F86A87 /* TournamentEntity+CoreDataProperties.swift */; };
 		77F422EC1C67A25300F86A87 /* TournamentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F422EA1C67A25300F86A87 /* TournamentEntity.swift */; };
@@ -43,6 +44,7 @@
 		77EDB87D1C6805E800334D7E /* GameEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameEntity.swift; sourceTree = "<group>"; };
 		77EDB87E1C6805E800334D7E /* GroupEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GroupEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		77EDB87F1C6805E800334D7E /* GroupEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupEntity.swift; sourceTree = "<group>"; };
+		77F0877D1C69FABA0018561B /* Incident.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Incident.swift; sourceTree = "<group>"; };
 		77F422E71C679FF300F86A87 /* TournamentBrackets.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TournamentBrackets.xcdatamodel; sourceTree = "<group>"; };
 		77F422E91C67A25300F86A87 /* TournamentEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TournamentEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		77F422EA1C67A25300F86A87 /* TournamentEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TournamentEntity.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				77EDB87A1C6805E800334D7E /* TeamEntity.swift */,
 				77EDB87C1C6805E800334D7E /* GameEntity+CoreDataProperties.swift */,
 				77EDB87D1C6805E800334D7E /* GameEntity.swift */,
+				77F0877D1C69FABA0018561B /* Incident.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 				7718C9F41C68DEA000CE5F89 /* CoreDataExtensions.swift in Sources */,
 				77EDB8811C6805E800334D7E /* TeamEntity.swift in Sources */,
 				77EDB8841C6805E800334D7E /* GameEntity.swift in Sources */,
+				77F0877E1C69FABA0018561B /* Incident.swift in Sources */,
 				77F422EB1C67A25300F86A87 /* TournamentEntity+CoreDataProperties.swift in Sources */,
 				77E1F5601C67859200F3C812 /* ViewController.swift in Sources */,
 				77F422EC1C67A25300F86A87 /* TournamentEntity.swift in Sources */,

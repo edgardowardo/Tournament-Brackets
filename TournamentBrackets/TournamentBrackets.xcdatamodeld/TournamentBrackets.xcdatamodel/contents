@@ -2,10 +2,17 @@
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15C50" minimumToolsVersion="Xcode 7.0">
     <entity name="GameEntity" representedClassName=".GameEntity" syncable="YES">
         <attribute name="awayIncident" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="awayKey" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="awayName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="awayScore" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="homeIncident" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="homeKey" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="homeName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="homeScore" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="index" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="info" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isBye" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="round" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="groupRelation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GroupEntity" inverseName="gamesRelation" inverseEntity="GroupEntity" syncable="YES"/>
     </entity>
     <entity name="GroupEntity" representedClassName=".GroupEntity" syncable="YES">
@@ -14,23 +21,25 @@
         <attribute name="scheduleType" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="teamCount" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="gamesRelation" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GameEntity" inverseName="groupRelation" inverseEntity="GameEntity" syncable="YES"/>
-        <relationship name="teamsRelation" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="TeamEntity" inverseName="groupRelation" inverseEntity="TeamEntity" spotlightIndexingEnabled="YES" syncable="YES"/>
-        <relationship name="tournamentRelation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TournamentEntity" inverseName="groupsRelation" inverseEntity="TournamentEntity" spotlightIndexingEnabled="YES" syncable="YES"/>
+        <relationship name="teamsRelation" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="TeamEntity" inverseName="groupRelation" inverseEntity="TeamEntity" syncable="YES"/>
+        <relationship name="tournamentRelation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TournamentEntity" inverseName="groupsRelation" inverseEntity="TournamentEntity" syncable="YES"/>
     </entity>
     <entity name="TeamEntity" representedClassName=".TeamEntity" syncable="YES">
         <attribute name="handicap" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="isBye" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="key" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="seeding" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <relationship name="groupRelation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GroupEntity" inverseName="teamsRelation" inverseEntity="GroupEntity" spotlightIndexingEnabled="YES" syncable="YES"/>
+        <relationship name="groupRelation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GroupEntity" inverseName="teamsRelation" inverseEntity="GroupEntity" syncable="YES"/>
     </entity>
     <entity name="TournamentEntity" representedClassName=".TournamentEntity" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="groupsRelation" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="GroupEntity" inverseName="tournamentRelation" inverseEntity="GroupEntity" spotlightIndexingEnabled="YES" syncable="YES"/>
+        <relationship name="groupsRelation" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="GroupEntity" inverseName="tournamentRelation" inverseEntity="GroupEntity" syncable="YES"/>
     </entity>
     <elements>
-        <element name="GameEntity" positionX="162" positionY="-106" width="128" height="133"/>
+        <element name="GameEntity" positionX="162" positionY="-135" width="128" height="240"/>
         <element name="GroupEntity" positionX="-65" positionY="-4" width="128" height="148"/>
-        <element name="TeamEntity" positionX="160" positionY="54" width="128" height="103"/>
+        <element name="TeamEntity" positionX="160" positionY="54" width="128" height="133"/>
         <element name="TournamentEntity" positionX="-263" positionY="71" width="128" height="73"/>
     </elements>
 </model>

@@ -29,6 +29,4 @@ class TournamentEntity: NSManagedObject {
         let groups = self.mutableSetValueForKey("groupsRelation")
         groups.addObject(group)
     }
-    
-    
 }

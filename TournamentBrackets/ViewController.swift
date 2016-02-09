@@ -28,7 +28,9 @@ class ViewController: UIViewController {
             let g = t.groupsRelation!.allObjects.first as! GroupEntity
             let teams = g.teamsRelation!.allObjects
             let teamsRelationCount = teams.count
-            print("\(t.name!) groupCount(\(t.groupsRelation!.count)) groupName(\(g.name!)) teamCount(\(g.teamCount)) teamsRelationCount(\(teamsRelationCount))")
+            let games = g.gamesRelation!.allObjects
+            print("\(t.name!) groupCount(\(t.groupsRelation!.count)) groupName(\(g.name!)) teamsRelationCount(\(teamsRelationCount)) gamesRelationCount=\(games.count)")
+            g.createGames()
         }
     }
     
@@ -46,4 +48,3 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 }
-
