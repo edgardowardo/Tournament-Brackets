@@ -1,5 +1,5 @@
 //
-//  RoundRobinPair.swift
+//  RoundRobin.swift
 //  TournamentBrackets
 //
 //  Created by EDGARDO AGNO on 09/02/2016.
@@ -8,31 +8,18 @@
 
 import Foundation
 
-protocol SchedulerDelegate {
-    func addGame(game:GameEntity)
-    func games() -> [GameEntity]
-}
-
-class RoundRobinPair {
- 
+class RoundRobin {
+    
     var delegate : SchedulerDelegate?
     
     func rainbowPair(round : Int, row : [TeamEntity], isHandicap : Bool) {
         guard let games = delegate?.games() where round < row.count else { return }
         
         let endIndex = row.count - 1
-        for var i = row.count / 2 - 1; i > 0 ; i-=2 {
-            // home
-            let home1 = row[i]
-            let home2 = row[endIndex - i]
-            
-            // away
-            let away1 = row[i - 1]
-            let away2 = row[endIndex - (i - 1)]
-            
-            if home1.isBye || home2.isBye || away1.isBye || away2.isBye {
-                continue
-            }
+        for var i = row.count / 2 - 1; i > 0 ; i-- {
+
+            let home = row[i]
+            let away = row[endIndex - i]
             
             let index = games.count
             let g = GameEntity.create(index, round: round)
@@ -40,8 +27,8 @@ class RoundRobinPair {
             g.homeScore = 0
             g.awayScore = 0
             if isHandicap {
-                let homeHandicap = home1.handicap + home2.handicap
-                let awayHandicap = away1.handicap + away2.handicap
+                let homeHandicap = home.handicap
+                let awayHandicap = away.handicap
                 let difference = abs(homeHandicap - awayHandicap)
                 if homeHandicap > awayHandicap {
                     g.homeScore = Int64(difference / 2)
@@ -52,20 +39,20 @@ class RoundRobinPair {
                 }
             }
             
-            g.isBye = home1.isBye || home2.isBye || away1.isBye || away2.isBye
-            g.homeName = "\(home1.name!)/\(home2.name!)"
-            g.awayName = "\(away1.name!)/\(away2.name!)"
-            g.homeKey = "\(home1.key!),\(home2.key!)"
-            g.awayKey = "\(away1.key!),\(away2.key!)"
+            g.isBye = home.isBye || away.isBye
+            g.homeName = "\(home.name!)"
+            g.awayName = "\(away.name!)"
+            g.homeKey = "\(home.key!)"
+            g.awayKey = "\(away.key!)"
             g.info = "\(g.homeName!) vs \(g.awayName!)"
             
             delegate?.addGame(g)
         }
         
-        // shift the elements to process as the next row. the last element is fixed hence, displaced is minus two.
+        // shift the elements to process as the next row. the first element is fixed hence insert to position one.
         var nextrow = row
-        let displaced = nextrow.removeAtIndex(row.count - 2)
-        nextrow.insert(displaced, atIndex: 0)
+        let displaced = nextrow.removeAtIndex(row.count - 1)
+        nextrow.insert(displaced, atIndex: 1)
         rainbowPair(round + 1, row: nextrow, isHandicap: isHandicap)
     }
 }

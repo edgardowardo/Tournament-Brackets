@@ -10,8 +10,8 @@ import Foundation
 import CoreData
 
 class GroupEntity: NSManagedObject {
-
-// Insert code here to add functionality to your managed object subclass
+    
+    // MARK: - Manual properties -
     
     var teamCount: Int16? {
         set {
@@ -33,6 +33,27 @@ class GroupEntity: NSManagedObject {
         }
     }
     
+    // MARK: - Functions -
+    
+    func deleteGames() {
+        let games = self.mutableSetValueForKey("gamesRelation")
+        for g in games {
+            g.MR_deleteEntity()
+        }
+    }
+    
+    func shuffleTeams() {
+        let teamsSet = self.mutableSetValueForKey("teamsRelation")
+        let teams = teamsSet.allObjects.shuffle() as! [TeamEntity]
+        for i in 0...teams.count-1 {
+            teams[i].seeding = Int16(i)
+        }
+    }
+    
+    func teams() -> [TeamEntity] {
+        return self.teamsRelation!.allObjects as! [TeamEntity]
+    }
+    
     func addTeam(team:TeamEntity) {
         let teams = self.mutableSetValueForKey("teamsRelation")
         teams.addObject(team)
@@ -48,13 +69,5 @@ class GroupEntity: NSManagedObject {
         g.teamCount = 4
         g.scheduleType = Int16(Schedule.RoundRobinPair.hashValue)
         return g
-    }
-    
-    func shuffleTeams() {
-        let teamsSet = self.mutableSetValueForKey("teamsRelation")
-        let teams = teamsSet.allObjects.shuffle() as! [TeamEntity]
-        for i in 0...teams.count-1 {
-            teams[i].seeding = Int16(i)
-        }
     }
 }

@@ -9,18 +9,7 @@
 import Foundation
 
 extension GroupEntity : SchedulerDelegate {
-    
-    func deleteGames() {
-        let games = self.mutableSetValueForKey("gamesRelation")
-        for g in games {
-            g.MR_deleteEntity()
-        }
-    }
-    
-    func teams() -> [TeamEntity] {
-        return self.teamsRelation!.allObjects as! [TeamEntity]
-    }
-    
+        
     func addGame(game:GameEntity) {
         let games = self.mutableSetValueForKey("gamesRelation")
         games.addObject(game)
@@ -32,11 +21,24 @@ extension GroupEntity : SchedulerDelegate {
     
     func createGames() {
         let schedule = Schedule(rawValue: self.scheduleType)!
+        var teams = self.teams()
+        guard  teams.count >= schedule.minimumTeams() else { return }
+        
+        // sort teams by seeding
+        teams.sortInPlace({ $0.0.seeding < $0.1.seeding })
+        
+        // if even add a bye
+        if teams.count % 2 != 0 {
+            teams.append(TeamEntity.create(Int16(teams.count + 1), name: "Bye", isBye: true))
+        }
+        
+        self.deleteGames()
+        
         switch schedule {
         case .RoundRobinPair :
             let scheduler = RoundRobinPair()
             scheduler.delegate = self
-            scheduler.createGames(self.isHandicap)
+            scheduler.rainbowPair(1, row: teams, isHandicap: self.isHandicap)
         default :
             assertionFailure("unknown schedule!")
         }

@@ -18,6 +18,7 @@
 		77E1F5631C67859200F3C812 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77E1F5611C67859200F3C812 /* Main.storyboard */; };
 		77E1F5651C67859200F3C812 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77E1F5641C67859200F3C812 /* Assets.xcassets */; };
 		77E1F5681C67859200F3C812 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77E1F5661C67859200F3C812 /* LaunchScreen.storyboard */; };
+		77E2A5A21C6A675100B86544 /* RoundRobin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E2A5A11C6A675100B86544 /* RoundRobin.swift */; };
 		77EDB8801C6805E800334D7E /* TeamEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EDB8791C6805E800334D7E /* TeamEntity+CoreDataProperties.swift */; };
 		77EDB8811C6805E800334D7E /* TeamEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EDB87A1C6805E800334D7E /* TeamEntity.swift */; };
 		77EDB8831C6805E800334D7E /* GameEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EDB87C1C6805E800334D7E /* GameEntity+CoreDataProperties.swift */; };
@@ -44,6 +45,7 @@
 		77E1F5641C67859200F3C812 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		77E1F5671C67859200F3C812 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		77E1F5691C67859200F3C812 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77E2A5A11C6A675100B86544 /* RoundRobin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundRobin.swift; sourceTree = "<group>"; };
 		77EDB8791C6805E800334D7E /* TeamEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TeamEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		77EDB87A1C6805E800334D7E /* TeamEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamEntity.swift; sourceTree = "<group>"; };
 		77EDB87C1C6805E800334D7E /* GameEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GameEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				777A7B801C6A344D006AFE5E /* RoundRobinPair.swift */,
+				77E2A5A11C6A675100B86544 /* RoundRobin.swift */,
 			);
 			path = Schedulers;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 				77EDB8841C6805E800334D7E /* GameEntity.swift in Sources */,
 				77F0877E1C69FABA0018561B /* Incident.swift in Sources */,
 				77F422EB1C67A25300F86A87 /* TournamentEntity+CoreDataProperties.swift in Sources */,
+				77E2A5A21C6A675100B86544 /* RoundRobin.swift in Sources */,
 				77E1F5601C67859200F3C812 /* ViewController.swift in Sources */,
 				77F422EC1C67A25300F86A87 /* TournamentEntity.swift in Sources */,
 				77EDB8851C6805E800334D7E /* GroupEntity+CoreDataProperties.swift in Sources */,
