@@ -12,6 +12,7 @@
 		777A7B7E1C6A2AAF006AFE5E /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777A7B7D1C6A2AAF006AFE5E /* Schedule.swift */; };
 		777A7B811C6A344D006AFE5E /* RoundRobinPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777A7B801C6A344D006AFE5E /* RoundRobinPair.swift */; };
 		777A7B831C6A3A4B006AFE5E /* GroupEntity+SchedulerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777A7B821C6A3A4B006AFE5E /* GroupEntity+SchedulerDelegate.swift */; };
+		779148C71C6A84AA0057CC74 /* SingleElimination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779148C61C6A84AA0057CC74 /* SingleElimination.swift */; };
 		77B11F191C6788720013D281 /* MagicalRecord.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77B11F181C6788720013D281 /* MagicalRecord.framework */; };
 		77E1F55E1C67859200F3C812 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E1F55D1C67859200F3C812 /* AppDelegate.swift */; };
 		77E1F5601C67859200F3C812 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E1F55F1C67859200F3C812 /* ViewController.swift */; };
@@ -37,6 +38,7 @@
 		777A7B7D1C6A2AAF006AFE5E /* Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		777A7B801C6A344D006AFE5E /* RoundRobinPair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundRobinPair.swift; sourceTree = "<group>"; };
 		777A7B821C6A3A4B006AFE5E /* GroupEntity+SchedulerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GroupEntity+SchedulerDelegate.swift"; sourceTree = "<group>"; };
+		779148C61C6A84AA0057CC74 /* SingleElimination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleElimination.swift; sourceTree = "<group>"; };
 		77B11F181C6788720013D281 /* MagicalRecord.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MagicalRecord.framework; path = Carthage/Build/iOS/MagicalRecord.framework; sourceTree = "<group>"; };
 		77E1F55A1C67859200F3C812 /* TournamentBrackets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TournamentBrackets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77E1F55D1C67859200F3C812 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 			children = (
 				777A7B801C6A344D006AFE5E /* RoundRobinPair.swift */,
 				77E2A5A11C6A675100B86544 /* RoundRobin.swift */,
+				779148C61C6A84AA0057CC74 /* SingleElimination.swift */,
 			);
 			path = Schedulers;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				77F422E81C679FF300F86A87 /* TournamentBrackets.xcdatamodeld in Sources */,
+				779148C71C6A84AA0057CC74 /* SingleElimination.swift in Sources */,
 				777A7B811C6A344D006AFE5E /* RoundRobinPair.swift in Sources */,
 				77EDB8801C6805E800334D7E /* TeamEntity+CoreDataProperties.swift in Sources */,
 				7718C9F41C68DEA000CE5F89 /* CoreDataExtensions.swift in Sources */,

@@ -67,7 +67,7 @@ class GroupEntity: NSManagedObject {
             g.name = "Group \(GroupEntity.MR_countOfEntities() + 1)"
         }
         g.teamCount = 4
-        g.scheduleType = Int16(Schedule.RoundRobinPair.hashValue)
+        g.scheduleType = Int16(Schedule.RoundRobin.hashValue)
         return g
     }
 }

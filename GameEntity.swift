@@ -27,4 +27,16 @@ class GameEntity: NSManagedObject {
         return g
     }
     
+    func calculateHandicaps(betweenHome home : TeamEntity, andAway away : TeamEntity) {
+        let homeHandicap = home.handicap
+        let awayHandicap = away.handicap
+        let difference = abs(homeHandicap - awayHandicap)
+        if homeHandicap > awayHandicap {
+            self.homeScore = Int64(difference / 2)
+            self.awayScore = -(self.homeScore)
+        } else if homeHandicap < awayHandicap {
+            self.awayScore = Int64(difference / 2)
+            self.homeScore = -(self.homeScore)
+        }
+    }
 }

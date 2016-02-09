@@ -1,5 +1,5 @@
 //
-//  RoundRobin.swift
+//  SingleElimination.swift
 //  TournamentBrackets
 //
 //  Created by EDGARDO AGNO on 09/02/2016.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class RoundRobin : Scheduler {
+class SingleElimination : Scheduler  {
     
     var delegate : SchedulerDelegate?
     
@@ -18,16 +18,14 @@ class RoundRobin : Scheduler {
     convenience init(delegate : SchedulerDelegate) {
         self.init()
         self.delegate = delegate
-    }    
-    
-    //TODO: need to print and verify.
+    }
     
     func rainbowPair(round : Int, row : [TeamEntity], isHandicap : Bool) {
         guard let games = delegate?.games() where round < row.count else { return }
         
         let endIndex = row.count - 1
         for var i = row.count / 2 - 1; i > 0 ; i-- {
-
+            
             let home = row[i]
             let away = row[endIndex - i]
             let index = games.count
@@ -49,9 +47,9 @@ class RoundRobin : Scheduler {
         }
         
         // shift the elements to process as the next row. the first element is fixed hence insert to position one.
-        var nextrow = row
-        let displaced = nextrow.removeAtIndex(row.count - 1)
-        nextrow.insert(displaced, atIndex: 1)
-        rainbowPair(round + 1, row: nextrow, isHandicap: isHandicap)
+//        var nextrow = row
+//        let displaced = nextrow.removeAtIndex(row.count - 1)
+//        nextrow.insert(displaced, atIndex: 1)
+//        rainbowPair(round + 1, row: nextrow, isHandicap: isHandicap)
     }
 }

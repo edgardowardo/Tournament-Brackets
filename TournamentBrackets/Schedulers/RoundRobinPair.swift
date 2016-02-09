@@ -13,9 +13,21 @@ protocol SchedulerDelegate {
     func games() -> [GameEntity]
 }
 
-class RoundRobinPair {
+protocol Scheduler {
+    func rainbowPair(round : Int, row : [TeamEntity], isHandicap : Bool)
+}
+
+class RoundRobinPair : Scheduler {
  
     var delegate : SchedulerDelegate?
+    
+    init() {
+    }
+    
+    convenience init(delegate : SchedulerDelegate) {
+        self.init()
+        self.delegate = delegate
+    }
     
     func rainbowPair(round : Int, row : [TeamEntity], isHandicap : Bool) {
         guard let games = delegate?.games() where round < row.count else { return }

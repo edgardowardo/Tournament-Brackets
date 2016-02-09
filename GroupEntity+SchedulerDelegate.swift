@@ -34,13 +34,20 @@ extension GroupEntity : SchedulerDelegate {
         
         self.deleteGames()
         
+        var s : Scheduler?
         switch schedule {
         case .RoundRobinPair :
-            let scheduler = RoundRobinPair()
-            scheduler.delegate = self
-            scheduler.rainbowPair(1, row: teams, isHandicap: self.isHandicap)
+            s = RoundRobinPair(delegate: self)
+        case .RoundRobin :
+            s = RoundRobin(delegate: self)
+        case .SingleElimination :
+            s = SingleElimination(delegate: self)
         default :
             assertionFailure("unknown schedule!")
+        }
+        
+        if let scheduler = s {
+            scheduler.rainbowPair(1, row: teams, isHandicap: self.isHandicap)
         }
     }
 }
