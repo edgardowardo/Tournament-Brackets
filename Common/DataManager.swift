@@ -23,6 +23,7 @@ class DataManager {
     var currentTournament : TournamentEntity? {
         set {
             appRecord.currentTournamentRelation = newValue
+            TournamentEntity.commit()
         }
         get {
             return appRecord.currentTournamentRelation
@@ -49,7 +50,6 @@ class DataManager {
     
     func newTournament() {
         let t = TournamentEntity.create()
-        DataManager.sharedInstance.currentTournament = t
         appRecord.addTournament(t)
         TournamentEntity.commit()
     }

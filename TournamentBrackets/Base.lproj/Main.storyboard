@@ -39,12 +39,12 @@
                                     <action selector="newTournament:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cvQ-z5-9mm"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Index of current tournament" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AVA-gw-N3Z">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Index of current tournament" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="AVA-gw-N3Z">
                                 <rect key="frame" x="200" y="142" width="202" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
                                 <connections>
-                                    <action selector="editingDidEnd:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="qyN-Q3-EHY"/>
+                                    <action selector="didEndEditing:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="yJV-sO-sbL"/>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DkL-Zg-QoQ">
@@ -69,21 +69,48 @@
                                     <action selector="printCurrent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2IW-wv-LbC"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IgM-E6-ka2">
+                                <rect key="frame" x="206" y="218" width="188" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="188" id="UCr-pk-dqF"/>
+                                    <constraint firstAttribute="height" constant="30" id="r4p-tr-sXT"/>
+                                </constraints>
+                                <state key="normal" title="Generate Schedule"/>
+                                <connections>
+                                    <action selector="generateSchedule:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YJE-MN-Nu3"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ms8-mb-dne">
+                                <rect key="frame" x="410" y="142" width="39" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="39" id="HAr-n9-1eK"/>
+                                    <constraint firstAttribute="height" constant="30" id="YHA-PC-FLP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ucx-4b-bmG" firstAttribute="top" secondItem="AVA-gw-N3Z" secondAttribute="bottom" constant="8" symbolic="YES" id="4IA-85-gj8"/>
+                            <constraint firstItem="ms8-mb-dne" firstAttribute="leading" secondItem="AVA-gw-N3Z" secondAttribute="trailing" constant="8" id="Cvs-fF-hsV"/>
                             <constraint firstItem="DkL-Zg-QoQ" firstAttribute="trailing" secondItem="7xP-ic-CQ4" secondAttribute="trailing" id="GzT-Yi-d1a"/>
+                            <constraint firstItem="ms8-mb-dne" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="122" id="JSv-mK-8E8"/>
                             <constraint firstItem="7xP-ic-CQ4" firstAttribute="centerX" secondItem="i7u-7c-Hjd" secondAttribute="centerX" id="QbD-T1-ibt"/>
                             <constraint firstItem="7xP-ic-CQ4" firstAttribute="top" secondItem="i7u-7c-Hjd" secondAttribute="bottom" constant="8" symbolic="YES" id="SNJ-ln-NiJ"/>
                             <constraint firstItem="ucx-4b-bmG" firstAttribute="centerX" secondItem="AVA-gw-N3Z" secondAttribute="centerX" constant="-1" id="T1L-e3-gpH"/>
                             <constraint firstItem="DkL-Zg-QoQ" firstAttribute="centerX" secondItem="AVA-gw-N3Z" secondAttribute="centerX" id="Wx2-1M-6aS"/>
+                            <constraint firstItem="IgM-E6-ka2" firstAttribute="top" secondItem="ucx-4b-bmG" secondAttribute="bottom" constant="8" symbolic="YES" id="a2T-rS-4bL"/>
                             <constraint firstItem="i7u-7c-Hjd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="d9w-uI-GQ2"/>
                             <constraint firstItem="AVA-gw-N3Z" firstAttribute="top" secondItem="DkL-Zg-QoQ" secondAttribute="bottom" constant="8" symbolic="YES" id="iIK-Fi-YiW"/>
+                            <constraint firstItem="IgM-E6-ka2" firstAttribute="leading" secondItem="ucx-4b-bmG" secondAttribute="leading" id="iUn-cR-DDT"/>
                             <constraint firstItem="i7u-7c-Hjd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mP3-xU-xPL"/>
                             <constraint firstItem="DkL-Zg-QoQ" firstAttribute="top" secondItem="7xP-ic-CQ4" secondAttribute="bottom" constant="8" symbolic="YES" id="rIL-gc-hVw"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textfieldIndex" destination="AVA-gw-N3Z" id="Fis-pR-iUH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

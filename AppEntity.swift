@@ -17,6 +17,7 @@ class AppEntity: NSManagedObject {
     func addTournament(tournament:TournamentEntity) {
         let list = self.mutableSetValueForKey("tournamentsRelation")
         list.addObject(tournament)
+        self.currentTournamentRelation = tournament
     }
     
 }
