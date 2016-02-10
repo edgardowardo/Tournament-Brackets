@@ -1,5 +1,5 @@
 //
-//  SettingEntity+CoreDataProperties.swift
+//  AppEntity+CoreDataProperties.swift
 //  TournamentBrackets
 //
 //  Created by EDGARDO AGNO on 10/02/2016.
@@ -12,9 +12,10 @@
 import Foundation
 import CoreData
 
-extension SettingEntity {
+extension AppEntity {
 
     @NSManaged var isShowTooltips: Bool
     @NSManaged var currentTournamentRelation: TournamentEntity?
+    @NSManaged var tournamentsRelation: NSSet?
 
 }

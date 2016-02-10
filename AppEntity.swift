@@ -1,5 +1,5 @@
 //
-//  SettingEntity.swift
+//  AppEntity.swift
 //  TournamentBrackets
 //
 //  Created by EDGARDO AGNO on 10/02/2016.
@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 
-class SettingEntity: NSManagedObject {
+class AppEntity: NSManagedObject {
 
 // Insert code here to add functionality to your managed object subclass
 
