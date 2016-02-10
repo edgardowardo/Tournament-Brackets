@@ -20,9 +20,14 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="scheduleType" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="teamCount" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="currentTournamentRelation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TournamentEntity" inverseName="currentGroupRelation" inverseEntity="TournamentEntity" syncable="YES"/>
         <relationship name="gamesRelation" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GameEntity" inverseName="groupRelation" inverseEntity="GameEntity" syncable="YES"/>
         <relationship name="teamsRelation" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="TeamEntity" inverseName="groupRelation" inverseEntity="TeamEntity" syncable="YES"/>
         <relationship name="tournamentRelation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TournamentEntity" inverseName="groupsRelation" inverseEntity="TournamentEntity" syncable="YES"/>
+    </entity>
+    <entity name="SettingEntity" representedClassName=".SettingEntity" syncable="YES">
+        <attribute name="isShowTooltips" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="currentTournamentRelation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TournamentEntity" inverseName="currentSettingRelation" inverseEntity="TournamentEntity" syncable="YES"/>
     </entity>
     <entity name="TeamEntity" representedClassName=".TeamEntity" syncable="YES">
         <attribute name="handicap" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
@@ -34,12 +39,15 @@
     </entity>
     <entity name="TournamentEntity" representedClassName=".TournamentEntity" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="currentGroupRelation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GroupEntity" inverseName="currentTournamentRelation" inverseEntity="GroupEntity" syncable="YES"/>
+        <relationship name="currentSettingRelation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SettingEntity" inverseName="currentTournamentRelation" inverseEntity="SettingEntity" syncable="YES"/>
         <relationship name="groupsRelation" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="GroupEntity" inverseName="tournamentRelation" inverseEntity="GroupEntity" syncable="YES"/>
     </entity>
     <elements>
         <element name="GameEntity" positionX="162" positionY="-135" width="128" height="240"/>
-        <element name="GroupEntity" positionX="-65" positionY="-4" width="128" height="148"/>
-        <element name="TeamEntity" positionX="160" positionY="54" width="128" height="133"/>
-        <element name="TournamentEntity" positionX="-263" positionY="71" width="128" height="73"/>
+        <element name="GroupEntity" positionX="-47" positionY="41" width="128" height="163"/>
+        <element name="TeamEntity" positionX="160" positionY="117" width="128" height="133"/>
+        <element name="TournamentEntity" positionX="-245" positionY="81" width="128" height="103"/>
+        <element name="SettingEntity" positionX="-243" positionY="-63" width="128" height="73"/>
     </elements>
 </model>

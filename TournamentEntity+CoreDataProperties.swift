@@ -16,5 +16,7 @@ extension TournamentEntity {
 
     @NSManaged var name: String?
     @NSManaged var groupsRelation: NSSet?
+    @NSManaged var currentGroupRelation: GroupEntity?
+    @NSManaged var currentSettingRelation: SettingEntity?
 
 }

@@ -28,11 +28,60 @@
                                     <action selector="truncate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hnk-Q0-tTz"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7xP-ic-CQ4">
+                                <rect key="frame" x="231" y="66" width="139" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="OUw-j1-7JB"/>
+                                    <constraint firstAttribute="width" constant="139" id="sYB-Ad-oNf"/>
+                                </constraints>
+                                <state key="normal" title="New Tournament"/>
+                                <connections>
+                                    <action selector="newTournament:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cvQ-z5-9mm"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Index of current tournament" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AVA-gw-N3Z">
+                                <rect key="frame" x="200" y="142" width="202" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <connections>
+                                    <action selector="editingDidEnd:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="qyN-Q3-EHY"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DkL-Zg-QoQ">
+                                <rect key="frame" x="231" y="104" width="139" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="3hP-fJ-m5P"/>
+                                    <constraint firstAttribute="width" constant="139" id="dHK-6R-AiE"/>
+                                </constraints>
+                                <state key="normal" title="Print Tournaments"/>
+                                <connections>
+                                    <action selector="printTournaments:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d3t-oq-GRm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ucx-4b-bmG">
+                                <rect key="frame" x="206" y="180" width="188" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="2TK-tZ-ehB"/>
+                                    <constraint firstAttribute="width" constant="188" id="Le4-Gx-6m9"/>
+                                </constraints>
+                                <state key="normal" title="Print Current Tournament"/>
+                                <connections>
+                                    <action selector="printCurrent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2IW-wv-LbC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="ucx-4b-bmG" firstAttribute="top" secondItem="AVA-gw-N3Z" secondAttribute="bottom" constant="8" symbolic="YES" id="4IA-85-gj8"/>
+                            <constraint firstItem="DkL-Zg-QoQ" firstAttribute="trailing" secondItem="7xP-ic-CQ4" secondAttribute="trailing" id="GzT-Yi-d1a"/>
+                            <constraint firstItem="7xP-ic-CQ4" firstAttribute="centerX" secondItem="i7u-7c-Hjd" secondAttribute="centerX" id="QbD-T1-ibt"/>
+                            <constraint firstItem="7xP-ic-CQ4" firstAttribute="top" secondItem="i7u-7c-Hjd" secondAttribute="bottom" constant="8" symbolic="YES" id="SNJ-ln-NiJ"/>
+                            <constraint firstItem="ucx-4b-bmG" firstAttribute="centerX" secondItem="AVA-gw-N3Z" secondAttribute="centerX" constant="-1" id="T1L-e3-gpH"/>
+                            <constraint firstItem="DkL-Zg-QoQ" firstAttribute="centerX" secondItem="AVA-gw-N3Z" secondAttribute="centerX" id="Wx2-1M-6aS"/>
                             <constraint firstItem="i7u-7c-Hjd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="d9w-uI-GQ2"/>
+                            <constraint firstItem="AVA-gw-N3Z" firstAttribute="top" secondItem="DkL-Zg-QoQ" secondAttribute="bottom" constant="8" symbolic="YES" id="iIK-Fi-YiW"/>
                             <constraint firstItem="i7u-7c-Hjd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mP3-xU-xPL"/>
+                            <constraint firstItem="DkL-Zg-QoQ" firstAttribute="top" secondItem="7xP-ic-CQ4" secondAttribute="bottom" constant="8" symbolic="YES" id="rIL-gc-hVw"/>
                         </constraints>
                     </view>
                 </viewController>

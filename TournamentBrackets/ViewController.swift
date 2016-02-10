@@ -20,6 +20,19 @@ class ViewController: UIViewController {
         printTourneys()
     }
     
+    @IBAction func newTournament(sender: AnyObject) {
+        DataManager.sharedInstance.newTournament()
+    }
+    
+    @IBAction func printTournaments(sender: AnyObject) {
+    }
+    
+    @IBAction func editingDidEnd(sender: AnyObject) {
+    }
+    
+    @IBAction func printCurrent(sender: AnyObject) {
+    }
+    
     private func printTourneys() {
         print("tourneysCount==\(TournamentEntity.MR_countOfEntities())")
         tourneyEntities = TournamentEntity.MR_findAll() as? [TournamentEntity]
@@ -38,9 +51,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        printTourneys()
-        TournamentEntity.create()
-        TournamentEntity.commit()
+//        printTourneys()
+//        TournamentEntity.create()
+//        TournamentEntity.commit()
     }
 
     override func didReceiveMemoryWarning() {

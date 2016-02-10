@@ -20,4 +20,6 @@ extension GroupEntity {
     @NSManaged var gamesRelation: NSSet?
     @NSManaged var teamsRelation: NSSet?
     @NSManaged var tournamentRelation: TournamentEntity?
+    @NSManaged var currentTournamentRelation: TournamentEntity?
+
 }
