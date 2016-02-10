@@ -10,7 +10,7 @@ import Foundation
 
 protocol SchedulerDelegate {
     func addGame(game:GameEntity)
-    func games() -> [GameEntity]
+    var games : [GameEntity]? { get }
 }
 
 protocol Scheduler {
@@ -30,7 +30,7 @@ class RoundRobinPair : Scheduler {
     }
     
     func rainbowPair(round : Int, row : [TeamEntity], isHandicap : Bool) {
-        guard let games = delegate?.games() where round < row.count else { return }
+        guard let games = delegate?.games where round < row.count else { return }
         
         let endIndex = row.count - 1
         for var i = row.count / 2 - 1; i > 0 ; i-=2 {

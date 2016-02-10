@@ -32,6 +32,16 @@ class GroupEntity: NSManagedObject {
             return Int16(n.integerValue)
         }
     }
+    var teams : [TeamEntity]? {
+        get {
+            return self.teamsRelation?.allObjects as? [TeamEntity]
+        }
+    }
+    var games : [GameEntity]? {
+        get {
+            return self.gamesRelation?.allObjects as? [GameEntity]
+        }
+    }
     
     // MARK: - Functions -
     
@@ -48,10 +58,6 @@ class GroupEntity: NSManagedObject {
         for i in 0...teams.count-1 {
             teams[i].seeding = Int16(i)
         }
-    }
-    
-    func teams() -> [TeamEntity] {
-        return self.teamsRelation!.allObjects as! [TeamEntity]
     }
     
     func addTeam(team:TeamEntity) {

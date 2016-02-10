@@ -19,31 +19,38 @@ class DataManager {
     // MARK:- Properties -
     
     static let sharedInstance = DataManager()
-    lazy var app : AppEntity = DataManager.sharedInstance.initialiseSetting()
+    lazy var appRecord : AppEntity = DataManager.sharedInstance.initialiseAppRecord()
     var currentTournament : TournamentEntity? {
         set {
-            app.currentTournamentRelation = newValue
+            appRecord.currentTournamentRelation = newValue
         }
         get {
-            return app.currentTournamentRelation
+            return appRecord.currentTournamentRelation
+        }
+    }
+    var tournaments : [TournamentEntity]? {
+        get {
+            return appRecord.tournamentsRelation?.allObjects as? [TournamentEntity]
         }
     }
     
     init () {
     }
     
-    func initialiseSetting() -> AppEntity {
-        if let setting = AppEntity.MR_findFirst() {
-            return setting
+    func initialiseAppRecord() -> AppEntity {
+        if let appRecord = AppEntity.MR_findFirst() {
+            return appRecord
         } else {
-            let setting = AppEntity.MR_createEntity()
+            let appRecord = AppEntity.MR_createEntity()
             AppEntity.commit()
-            return setting!
+            return appRecord!
         }
     }
     
     func newTournament() {
-        DataManager.sharedInstance.currentTournament = TournamentEntity.create()
+        let t = TournamentEntity.create()
+        DataManager.sharedInstance.currentTournament = t
+        appRecord.addTournament(t)
         TournamentEntity.commit()
     }
 }

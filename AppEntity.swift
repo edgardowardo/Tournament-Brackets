@@ -13,5 +13,10 @@ import CoreData
 class AppEntity: NSManagedObject {
 
 // Insert code here to add functionality to your managed object subclass
-
+    
+    func addTournament(tournament:TournamentEntity) {
+        let list = self.mutableSetValueForKey("tournamentsRelation")
+        list.addObject(tournament)
+    }
+    
 }
