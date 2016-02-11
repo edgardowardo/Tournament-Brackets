@@ -51,6 +51,7 @@ class GroupEntity: NSManagedObject {
         for t in teams {
             t.MR_deleteEntity()
         }
+        teams.removeAllObjects()
     }
     
     func deleteGames() {
@@ -58,6 +59,7 @@ class GroupEntity: NSManagedObject {
         for g in games {
             g.MR_deleteEntity()
         }
+        games.removeAllObjects()
     }
     
     func shuffleTeams() {

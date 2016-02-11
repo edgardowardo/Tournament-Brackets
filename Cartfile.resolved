@@ -1,1 +1,3 @@
 github "MagicalPanda/MagicalRecord" "v2.3.3"
+github "Quick/Nimble" "v3.1.0"
+github "Quick/Quick" "v0.9.1"

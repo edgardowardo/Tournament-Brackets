@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		7718C9F41C68DEA000CE5F89 /* GeneralExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7718C9F31C68DEA000CE5F89 /* GeneralExtensions.swift */; };
 		772985F41C67866800E83582 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 772985F31C67866800E83582 /* Cartfile */; };
+		7764BD9D1C6D12FB00DAD517 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7764BD9C1C6D12FB00DAD517 /* Nimble.framework */; };
+		7764BD9F1C6D130000DAD517 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7764BD9E1C6D130000DAD517 /* Quick.framework */; };
 		777A7B7E1C6A2AAF006AFE5E /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777A7B7D1C6A2AAF006AFE5E /* Schedule.swift */; };
 		777A7B811C6A344D006AFE5E /* RoundRobinPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777A7B801C6A344D006AFE5E /* RoundRobinPair.swift */; };
 		777A7B831C6A3A4B006AFE5E /* GroupEntity+SchedulerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777A7B821C6A3A4B006AFE5E /* GroupEntity+SchedulerDelegate.swift */; };
@@ -82,6 +84,8 @@
 /* Begin PBXFileReference section */
 		7718C9F31C68DEA000CE5F89 /* GeneralExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralExtensions.swift; sourceTree = "<group>"; };
 		772985F31C67866800E83582 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		7764BD9C1C6D12FB00DAD517 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		7764BD9E1C6D130000DAD517 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		777A7B7D1C6A2AAF006AFE5E /* Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		777A7B801C6A344D006AFE5E /* RoundRobinPair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundRobinPair.swift; sourceTree = "<group>"; };
 		777A7B821C6A3A4B006AFE5E /* GroupEntity+SchedulerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GroupEntity+SchedulerDelegate.swift"; sourceTree = "<group>"; };
@@ -128,6 +132,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				77F48A7D1C6CEFF1002F501A /* MagicalRecord.framework in Frameworks */,
+				7764BD9D1C6D12FB00DAD517 /* Nimble.framework in Frameworks */,
+				7764BD9F1C6D130000DAD517 /* Quick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,8 +162,10 @@
 		77B11F1B1C678CE70013D281 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				772985F31C67866800E83582 /* Cartfile */,
 				77B11F181C6788720013D281 /* MagicalRecord.framework */,
+				7764BD9E1C6D130000DAD517 /* Quick.framework */,
+				7764BD9C1C6D12FB00DAD517 /* Nimble.framework */,
+				772985F31C67866800E83582 /* Cartfile */,
 				77F422EE1C67A7FA00F86A87 /* TournamentBrackets-Bridging-Header.h */,
 			);
 			name = Frameworks;
@@ -349,7 +357,9 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)//Carthage/Build/iOS/MagicalRecord.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/MagicalRecord.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Nimble.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Quick.framework",
 			);
 			outputPaths = (
 			);
@@ -620,6 +630,7 @@
 				77F48A691C6CDB88002F501A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
