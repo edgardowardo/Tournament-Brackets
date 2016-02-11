@@ -12,7 +12,6 @@ import CoreData
 
 class ViewController: UIViewController, UITextFieldDelegate {
 
-//    var tourneyEntities : [TournamentEntity]!
     @IBOutlet weak var textfieldIndex: UITextField!
     
     @IBAction func truncate(sender: AnyObject) {
@@ -23,6 +22,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func newTournament(sender: AnyObject) {
         DataManager.sharedInstance.newTournament()
+        if let g = DataManager.sharedInstance.currentTournament?.currentGroupRelation {
+            g.teamCount = 4
+            g.scheduleType = Int16(Schedule.SingleElimination.hashValue)
+        }
         print("Added new tournament")
     }
     
@@ -31,7 +34,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         if let tournaments = DataManager.sharedInstance.tournaments {
             print("Count of Tournaments(\(tournaments.count))")
             for t in tournaments {
-                print("\(t.name!)")
+                print("\(t)")
             }
         }
     }
@@ -49,8 +52,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func printCurrent(sender: AnyObject) {
         print("-------------")
-        if let t = DataManager.sharedInstance.currentTournament {
-            print("CurrentTournament == \(t.name!)")
+        if let t = DataManager.sharedInstance.currentTournament, g = t.currentGroupRelation {
+            print("CurrentTournament == \(t)\n\(g)")
         }
         textfieldIndex.resignFirstResponder()
     }
@@ -62,30 +65,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-//    private func printTourneys() {
-//        print("-------------")
-//        print("tourneysCount==\(TournamentEntity.MR_countOfEntities())")
-//        tourneyEntities = TournamentEntity.MR_findAll() as? [TournamentEntity]
-//        for t in tourneyEntities {
-//            t.name! += ",\(tourneyEntities.count)"
-//            let g = t.groupsRelation!.allObjects.first as! GroupEntity
-//            let teams = g.teamsRelation!.allObjects
-//            let teamsRelationCount = teams.count
-//            let games = g.gamesRelation!.allObjects
-//            print("\(t.name!) groupCount(\(t.groupsRelation!.count)) groupName(\(g.name!)) teamsRelationCount(\(teamsRelationCount)) gamesRelationCount=\(games.count)")
-//            g.createGames()
-//        }
-//    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         self.textfieldIndex.delegate = self
-        
-//        printTourneys()
-//        TournamentEntity.create()
-//        TournamentEntity.commit()
     }
 
     override func didReceiveMemoryWarning() {

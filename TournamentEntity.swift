@@ -30,4 +30,18 @@ class TournamentEntity: NSManagedObject {
         groups.addObject(group)
         self.currentGroupRelation = group
     }
+    
+    internal override var description: String {
+        get {
+            var groupCount = 0
+            var currentGroupName = ""
+            if let g = self.groupsRelation {
+                groupCount = g.count
+            }
+            if let g = self.currentGroupRelation, n = g.name {
+                currentGroupName = n
+            }
+            return "[\(self.name!)] - \(groupCount) groups,  [\(currentGroupName)] current group"
+        }
+    }
 }

@@ -9,16 +9,33 @@
 enum Schedule : Int16 {
     case RoundRobinPair, RoundRobin, SingleElimination, DoubleElimination
     
-    func minimumTeams() -> Int {
-        switch self {
-        case .RoundRobinPair :
-            return 4
-        case .RoundRobin :
-            fallthrough
-        case .SingleElimination :
-            fallthrough
-        case .DoubleElimination :
-            return 2
+    var desc : String {
+        get {
+            switch self {
+            case .RoundRobinPair :
+                return "Round Robin Pair"
+            case .RoundRobin :
+                return "Round Robin"
+            case .SingleElimination :
+                return "Single Elimination"
+            case .DoubleElimination :
+                return "Double Elimination"
+            }
+        }
+    }
+    
+    var minimumTeams : Int {
+        get {
+            switch self {
+            case .RoundRobinPair :
+                return 4
+            case .RoundRobin :
+                fallthrough
+            case .SingleElimination :
+                fallthrough
+            case .DoubleElimination :
+                return 2
+            }
         }
     }
 }

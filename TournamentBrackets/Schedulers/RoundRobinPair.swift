@@ -32,6 +32,7 @@ class RoundRobinPair : Scheduler {
     func rainbowPair(round : Int, row : [TeamEntity], isHandicap : Bool) {
         guard let games = delegate?.games where round < row.count else { return }
         
+        var index = games.count
         let endIndex = row.count - 1
         for var i = row.count / 2 - 1; i > 0 ; i-=2 {
             // home
@@ -46,9 +47,7 @@ class RoundRobinPair : Scheduler {
                 continue
             }
             
-            let index = games.count
-            let g = GameEntity.create(index, round: round)
-            
+            let g = GameEntity.create(index++, round: round)
             g.homeScore = 0
             g.awayScore = 0
             if isHandicap {
@@ -69,7 +68,7 @@ class RoundRobinPair : Scheduler {
             g.awayName = "\(away1.name!)/\(away2.name!)"
             g.homeKey = "\(home1.key!),\(home2.key!)"
             g.awayKey = "\(away1.key!),\(away2.key!)"
-            g.info = "\(g.homeName!) vs \(g.awayName!)"
+            g.info = "\(g.round). \(g.homeName!) vs \(g.awayName!) (\(g.index))"
             
             delegate?.addGame(g)
         }

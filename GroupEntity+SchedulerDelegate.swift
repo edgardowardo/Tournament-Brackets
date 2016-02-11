@@ -17,7 +17,7 @@ extension GroupEntity : SchedulerDelegate {
     
     func createGames() {
         let schedule = Schedule(rawValue: self.scheduleType)!
-        guard var teams = self.teams where teams.count >= schedule.minimumTeams() else { return }
+        guard var teams = self.teams where teams.count >= schedule.minimumTeams else { return }
         
         // sort teams by seeding
         teams.sortInPlace({ $0.0.seeding < $0.1.seeding })

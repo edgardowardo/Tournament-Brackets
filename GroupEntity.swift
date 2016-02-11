@@ -20,6 +20,7 @@ class GroupEntity: NSManagedObject {
             self.didChangeValueForKey("teamCount")
             
             // auto create team relationship when count is set
+            self.deleteTeams()
             for var i : Int16 = 0; i < newValue!; i++ {
                 let t = TeamEntity.create(i + 1, name: "Team \(i + 1)")
                 self.addTeam(t)
@@ -44,6 +45,13 @@ class GroupEntity: NSManagedObject {
     }
     
     // MARK: - Functions -
+    
+    func deleteTeams() {
+        let teams = self.mutableSetValueForKey("teamsRelation")
+        for t in teams {
+            t.MR_deleteEntity()
+        }
+    }
     
     func deleteGames() {
         let games = self.mutableSetValueForKey("gamesRelation")
@@ -73,7 +81,24 @@ class GroupEntity: NSManagedObject {
             g.name = "Group \(GroupEntity.MR_countOfEntities() + 1)"
         }
         g.teamCount = 4
-        g.scheduleType = Int16(Schedule.RoundRobin.hashValue)
+        g.scheduleType = Int16(Schedule.RoundRobinPair.hashValue)
         return g
+    }
+    
+    internal override var description: String {
+        get {
+            let sched = Schedule(rawValue: self.scheduleType)!
+            var gamesCount = 0
+            if let g = self.gamesRelation {
+                gamesCount = g.count
+            }
+            var teamsCount = 0
+            if let t = self.teamsRelation {
+                teamsCount = t.count
+            }
+            let t = teams?.sort({$0.0.seeding < $0.1.seeding}).map({$0.name!}).joinWithSeparator(", ")
+            let g = games?.sort({$0.0.index < $0.1.index }).map({$0.info!}).joinWithSeparator(", ")
+            return "[\(self.name!)] \(sched.desc), isHandicap(\(isHandicap)) \n\(teamsCount) teams[\(t!)] \n\(gamesCount) games[\(g!)], "
+        }
     }
 }
