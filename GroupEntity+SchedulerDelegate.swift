@@ -22,14 +22,10 @@ extension GroupEntity : SchedulerDelegate {
         // sort teams by seeding
         teams.sortInPlace({ $0.0.seeding < $0.1.seeding })
         
-        // if even add a bye
-        if teams.count % 2 != 0 {
-            teams.append(TeamEntity.create(Int16(teams.count + 1), name: "Bye", isBye: true))
-        }
-        
         self.deleteGames()
         
         var s : Scheduler?
+        // create the scheduler
         switch schedule {
         case .RoundRobinPair :
             s = RoundRobinPair(delegate: self)

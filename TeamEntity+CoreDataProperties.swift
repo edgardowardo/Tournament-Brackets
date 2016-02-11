@@ -15,10 +15,11 @@ import CoreData
 extension TeamEntity {
 
     @NSManaged var handicap: Int16
+    @NSManaged var isBye: Bool
     @NSManaged var key: String?
     @NSManaged var name: String?
     @NSManaged var seeding: Int16
-    @NSManaged var isBye: Bool
     @NSManaged var groupRelation: GroupEntity?
+    @NSManaged var winsRelation: NSSet?
 
 }

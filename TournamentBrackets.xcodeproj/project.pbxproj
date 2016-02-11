@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7718C9F41C68DEA000CE5F89 /* CoreDataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7718C9F31C68DEA000CE5F89 /* CoreDataExtensions.swift */; };
+		7718C9F41C68DEA000CE5F89 /* GeneralExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7718C9F31C68DEA000CE5F89 /* GeneralExtensions.swift */; };
 		772985F41C67866800E83582 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 772985F31C67866800E83582 /* Cartfile */; };
 		777A7B7E1C6A2AAF006AFE5E /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777A7B7D1C6A2AAF006AFE5E /* Schedule.swift */; };
 		777A7B811C6A344D006AFE5E /* RoundRobinPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777A7B801C6A344D006AFE5E /* RoundRobinPair.swift */; };
@@ -36,7 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7718C9F31C68DEA000CE5F89 /* CoreDataExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataExtensions.swift; sourceTree = "<group>"; };
+		7718C9F31C68DEA000CE5F89 /* GeneralExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralExtensions.swift; sourceTree = "<group>"; };
 		772985F31C67866800E83582 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		777A7B7D1C6A2AAF006AFE5E /* Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		777A7B801C6A344D006AFE5E /* RoundRobinPair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundRobinPair.swift; sourceTree = "<group>"; };
@@ -92,7 +92,7 @@
 		77ABFCF11C67C267000D3B8F /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				7718C9F31C68DEA000CE5F89 /* CoreDataExtensions.swift */,
+				7718C9F31C68DEA000CE5F89 /* GeneralExtensions.swift */,
 				77C0C2151C6B6C1700EDA00E /* DataManager.swift */,
 			);
 			path = Common;
@@ -256,7 +256,7 @@
 				779148C71C6A84AA0057CC74 /* SingleElimination.swift in Sources */,
 				777A7B811C6A344D006AFE5E /* RoundRobinPair.swift in Sources */,
 				77EDB8801C6805E800334D7E /* TeamEntity+CoreDataProperties.swift in Sources */,
-				7718C9F41C68DEA000CE5F89 /* CoreDataExtensions.swift in Sources */,
+				7718C9F41C68DEA000CE5F89 /* GeneralExtensions.swift in Sources */,
 				77EDB8811C6805E800334D7E /* TeamEntity.swift in Sources */,
 				777A7B831C6A3A4B006AFE5E /* GroupEntity+SchedulerDelegate.swift in Sources */,
 				77EDB8841C6805E800334D7E /* GameEntity.swift in Sources */,

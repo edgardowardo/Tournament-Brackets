@@ -37,3 +37,8 @@ extension MutableCollectionType where Index == Int {
         }
     }
 }
+
+infix operator ^^ { }
+func ^^ (radix: Int, power: Int) -> Int {
+    return Int(pow(Double(radix), Double(power)))
+}

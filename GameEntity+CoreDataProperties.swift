@@ -23,9 +23,10 @@ extension GameEntity {
     @NSManaged var homeName: String?
     @NSManaged var homeScore: Int64
     @NSManaged var index: Int16
-    @NSManaged var isBye: Bool
     @NSManaged var info: String?
+    @NSManaged var isBye: Bool
     @NSManaged var round: Int16
     @NSManaged var groupRelation: GroupEntity?
+    @NSManaged var winnerRelation: TeamEntity?
 
 }

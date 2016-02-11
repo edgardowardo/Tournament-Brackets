@@ -23,8 +23,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBAction func newTournament(sender: AnyObject) {
         DataManager.sharedInstance.newTournament()
         if let g = DataManager.sharedInstance.currentTournament?.currentGroupRelation {
-            g.teamCount = 4
+            g.teamCount = 5
             g.scheduleType = Int16(Schedule.SingleElimination.hashValue)
+            NSManagedObject.commit()
         }
         print("Added new tournament")
     }
@@ -61,6 +62,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBAction func generateSchedule(sender: AnyObject) {
         if let t = DataManager.sharedInstance.currentTournament, g = t.currentGroupRelation {
             g.createGames()
+            NSManagedObject.commit()
             print("Games generated")
         }
     }
