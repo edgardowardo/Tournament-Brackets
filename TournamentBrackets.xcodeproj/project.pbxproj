@@ -33,7 +33,51 @@
 		77F422E81C679FF300F86A87 /* TournamentBrackets.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 77F422E61C679FF300F86A87 /* TournamentBrackets.xcdatamodeld */; };
 		77F422EB1C67A25300F86A87 /* TournamentEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F422E91C67A25300F86A87 /* TournamentEntity+CoreDataProperties.swift */; };
 		77F422EC1C67A25300F86A87 /* TournamentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F422EA1C67A25300F86A87 /* TournamentEntity.swift */; };
+		77F48A641C6CDB88002F501A /* TournamentBracketsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F48A631C6CDB88002F501A /* TournamentBracketsTests.swift */; };
+		77F48A6B1C6CE25B002F501A /* TournamentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F422EA1C67A25300F86A87 /* TournamentEntity.swift */; };
+		77F48A6C1C6CE2DE002F501A /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C0C2151C6B6C1700EDA00E /* DataManager.swift */; };
+		77F48A6D1C6CE33B002F501A /* TournamentEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F422E91C67A25300F86A87 /* TournamentEntity+CoreDataProperties.swift */; };
+		77F48A6E1C6CE34B002F501A /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777A7B7D1C6A2AAF006AFE5E /* Schedule.swift */; };
+		77F48A6F1C6CE359002F501A /* GeneralExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7718C9F31C68DEA000CE5F89 /* GeneralExtensions.swift */; };
+		77F48A701C6CE455002F501A /* AppEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779ADA311C6B7D2800BABA27 /* AppEntity.swift */; };
+		77F48A711C6CE459002F501A /* AppEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779ADA301C6B7D2800BABA27 /* AppEntity+CoreDataProperties.swift */; };
+		77F48A721C6CE45E002F501A /* GroupEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EDB87F1C6805E800334D7E /* GroupEntity.swift */; };
+		77F48A731C6CE461002F501A /* GroupEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EDB87E1C6805E800334D7E /* GroupEntity+CoreDataProperties.swift */; };
+		77F48A741C6CE464002F501A /* GroupEntity+SchedulerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777A7B821C6A3A4B006AFE5E /* GroupEntity+SchedulerDelegate.swift */; };
+		77F48A751C6CE467002F501A /* TeamEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EDB87A1C6805E800334D7E /* TeamEntity.swift */; };
+		77F48A761C6CE46A002F501A /* TeamEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EDB8791C6805E800334D7E /* TeamEntity+CoreDataProperties.swift */; };
+		77F48A771C6CE46D002F501A /* GameEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EDB87D1C6805E800334D7E /* GameEntity.swift */; };
+		77F48A781C6CE470002F501A /* GameEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EDB87C1C6805E800334D7E /* GameEntity+CoreDataProperties.swift */; };
+		77F48A791C6CE47E002F501A /* Incident.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0877D1C69FABA0018561B /* Incident.swift */; };
+		77F48A7A1C6CE493002F501A /* RoundRobinPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777A7B801C6A344D006AFE5E /* RoundRobinPair.swift */; };
+		77F48A7B1C6CE495002F501A /* RoundRobin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E2A5A11C6A675100B86544 /* RoundRobin.swift */; };
+		77F48A7C1C6CE498002F501A /* SingleElimination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779148C61C6A84AA0057CC74 /* SingleElimination.swift */; };
+		77F48A7D1C6CEFF1002F501A /* MagicalRecord.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77B11F181C6788720013D281 /* MagicalRecord.framework */; };
+		77F48A811C6D0023002F501A /* MagicalRecord.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 77B11F181C6788720013D281 /* MagicalRecord.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		77F48A661C6CDB88002F501A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 77E1F5521C67859200F3C812 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 77E1F5591C67859200F3C812;
+			remoteInfo = TournamentBrackets;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		77F48A801C6CFFFF002F501A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				77F48A811C6D0023002F501A /* MagicalRecord.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		7718C9F31C68DEA000CE5F89 /* GeneralExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralExtensions.swift; sourceTree = "<group>"; };
@@ -65,6 +109,9 @@
 		77F422E91C67A25300F86A87 /* TournamentEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TournamentEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		77F422EA1C67A25300F86A87 /* TournamentEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TournamentEntity.swift; sourceTree = "<group>"; };
 		77F422EE1C67A7FA00F86A87 /* TournamentBrackets-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TournamentBrackets-Bridging-Header.h"; sourceTree = "<group>"; };
+		77F48A611C6CDB88002F501A /* TournamentBracketsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TournamentBracketsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		77F48A631C6CDB88002F501A /* TournamentBracketsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentBracketsTests.swift; sourceTree = "<group>"; };
+		77F48A651C6CDB88002F501A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +120,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				77B11F191C6788720013D281 /* MagicalRecord.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		77F48A5E1C6CDB88002F501A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				77F48A7D1C6CEFF1002F501A /* MagicalRecord.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +170,7 @@
 				77F422ED1C67A2E500F86A87 /* Model */,
 				77B11F1B1C678CE70013D281 /* Frameworks */,
 				77E1F55C1C67859200F3C812 /* TournamentBrackets */,
+				77F48A621C6CDB88002F501A /* TournamentBracketsTests */,
 				77E1F55B1C67859200F3C812 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -123,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				77E1F55A1C67859200F3C812 /* TournamentBrackets.app */,
+				77F48A611C6CDB88002F501A /* TournamentBracketsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -162,6 +219,15 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		77F48A621C6CDB88002F501A /* TournamentBracketsTests */ = {
+			isa = PBXGroup;
+			children = (
+				77F48A631C6CDB88002F501A /* TournamentBracketsTests.swift */,
+				77F48A651C6CDB88002F501A /* Info.plist */,
+			);
+			path = TournamentBracketsTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -183,6 +249,26 @@
 			productReference = 77E1F55A1C67859200F3C812 /* TournamentBrackets.app */;
 			productType = "com.apple.product-type.application";
 		};
+		77F48A601C6CDB88002F501A /* TournamentBracketsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 77F48A6A1C6CDB88002F501A /* Build configuration list for PBXNativeTarget "TournamentBracketsTests" */;
+			buildPhases = (
+				77F48A5D1C6CDB88002F501A /* Sources */,
+				77F48A5E1C6CDB88002F501A /* Frameworks */,
+				77F48A5F1C6CDB88002F501A /* Resources */,
+				77F48A801C6CFFFF002F501A /* CopyFiles */,
+				77F48A831C6D032D002F501A /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				77F48A671C6CDB88002F501A /* PBXTargetDependency */,
+			);
+			name = TournamentBracketsTests;
+			productName = TournamentBracketsTests;
+			productReference = 77F48A611C6CDB88002F501A /* TournamentBracketsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -195,6 +281,10 @@
 				TargetAttributes = {
 					77E1F5591C67859200F3C812 = {
 						CreatedOnToolsVersion = 7.2;
+					};
+					77F48A601C6CDB88002F501A = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 77E1F5591C67859200F3C812;
 					};
 				};
 			};
@@ -212,6 +302,7 @@
 			projectRoot = "";
 			targets = (
 				77E1F5591C67859200F3C812 /* TournamentBrackets */,
+				77F48A601C6CDB88002F501A /* TournamentBracketsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -228,6 +319,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		77F48A5F1C6CDB88002F501A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -238,6 +336,20 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/MagicalRecord.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		77F48A831C6D032D002F501A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)//Carthage/Build/iOS/MagicalRecord.framework",
 			);
 			outputPaths = (
 			);
@@ -276,7 +388,41 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		77F48A5D1C6CDB88002F501A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				77F48A771C6CE46D002F501A /* GameEntity.swift in Sources */,
+				77F48A731C6CE461002F501A /* GroupEntity+CoreDataProperties.swift in Sources */,
+				77F48A641C6CDB88002F501A /* TournamentBracketsTests.swift in Sources */,
+				77F48A721C6CE45E002F501A /* GroupEntity.swift in Sources */,
+				77F48A751C6CE467002F501A /* TeamEntity.swift in Sources */,
+				77F48A7B1C6CE495002F501A /* RoundRobin.swift in Sources */,
+				77F48A6D1C6CE33B002F501A /* TournamentEntity+CoreDataProperties.swift in Sources */,
+				77F48A6C1C6CE2DE002F501A /* DataManager.swift in Sources */,
+				77F48A791C6CE47E002F501A /* Incident.swift in Sources */,
+				77F48A781C6CE470002F501A /* GameEntity+CoreDataProperties.swift in Sources */,
+				77F48A7A1C6CE493002F501A /* RoundRobinPair.swift in Sources */,
+				77F48A701C6CE455002F501A /* AppEntity.swift in Sources */,
+				77F48A6E1C6CE34B002F501A /* Schedule.swift in Sources */,
+				77F48A6F1C6CE359002F501A /* GeneralExtensions.swift in Sources */,
+				77F48A711C6CE459002F501A /* AppEntity+CoreDataProperties.swift in Sources */,
+				77F48A6B1C6CE25B002F501A /* TournamentEntity.swift in Sources */,
+				77F48A761C6CE46A002F501A /* TeamEntity+CoreDataProperties.swift in Sources */,
+				77F48A741C6CE464002F501A /* GroupEntity+SchedulerDelegate.swift in Sources */,
+				77F48A7C1C6CE498002F501A /* SingleElimination.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		77F48A671C6CDB88002F501A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 77E1F5591C67859200F3C812 /* TournamentBrackets */;
+			targetProxy = 77F48A661C6CDB88002F501A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		77E1F5611C67859200F3C812 /* Main.storyboard */ = {
@@ -414,6 +560,38 @@
 			};
 			name = Release;
 		};
+		77F48A681C6CDB88002F501A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = TournamentBracketsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.edgardoagno.TournamentBracketsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TournamentBrackets.app/TournamentBrackets";
+			};
+			name = Debug;
+		};
+		77F48A691C6CDB88002F501A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = TournamentBracketsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.edgardoagno.TournamentBracketsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TournamentBrackets.app/TournamentBrackets";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -434,6 +612,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		77F48A6A1C6CDB88002F501A /* Build configuration list for PBXNativeTarget "TournamentBracketsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				77F48A681C6CDB88002F501A /* Debug */,
+				77F48A691C6CDB88002F501A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 
